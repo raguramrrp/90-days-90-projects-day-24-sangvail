@@ -1,0 +1,43 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment & secrets
+.env
+.env.local
+*.pem
+*.key
+
+# Local database files & generated runtime outputs
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+data/sangvail.db
+data/synthetic/*.csv
+local_screenshots/
+screenshots/*.png
+exports/*
+!exports/.gitkeep
+reports/*
+!reports/.gitkeep
+ml/saved_models/*.joblib
+!ml/saved_models/.gitkeep
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

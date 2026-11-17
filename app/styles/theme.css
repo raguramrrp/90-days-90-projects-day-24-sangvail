@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+    --sv-bg: #F6F8FA;
+    --sv-surface: #FFFFFF;
+    --sv-surface-nested: #F1F5F9;
+    --sv-text: #0F172A;
+    --sv-text-secondary: #475569;
+    --sv-text-muted: #64748B;
+    --sv-accent: #0F766E;
+    --sv-accent-hover: #115E59;
+    --sv-accent-tint: #F0FDFA;
+    --sv-accent-border: #99F6E4;
+    --sv-cyan: #0369A1;
+    --sv-warning: #B45309;
+    --sv-critical: #BE123C;
+    --sv-border: #E2E8F0;
+    --sv-border-input: #CBD5E1;
+}
+
+/* Global Full-Screen Canvas & Typography */
+html, body, [class*="css"], .stApp {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    background-color: var(--sv-bg) !important;
+    color: var(--sv-text) !important;
+    font-size: 13.5px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Hide Streamlit default chrome */
+section[data-testid="stSidebar"],
+button[data-testid="stSidebarCollapsedControl"],
+div[data-testid="collapsedControl"],
+#MainMenu,
+footer,
+header[data-testid="stHeader"] {
+    display: none !important;
+}
+
+/* Full-screen fluid workspace container */
+.block-container,
+div[data-testid="stAppViewBlockContainer"] {
+    padding-top: 1.0rem !important;
+    padding-bottom: 2.5rem !important;
+    padding-left: 2.25rem !important;
+    padding-right: 2.25rem !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+div[data-testid="stHtml"] {
+    margin-bottom: 0 !important;
+}
+
+/* Hide zero-height style blocks from adding flex gaps */
+div[data-testid="stElementContainer"]:has(> div[data-testid="stHtml"] > style:only-child) {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Top Utility & Navigation Bar */
+.sv-brand-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 2px 0;
+}
+
+.sv-wordmark {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--sv-text);
+    line-height: 1;
+}
+
+/* Flat Architectural Containers */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background-color: var(--sv-surface) !important;
+    border: 1px solid var(--sv-border) !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 0.7rem !important;
+    box-shadow: none !important;
+}
+
+/* Crisp Flat Buttons */
+.stButton > button,
+.stPopover > div > button,
+.stDownloadButton > button,
+.stFormSubmitButton > button {
+    border-radius: 6px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    padding: 0.45rem 0.9rem !important;
+    min-height: 38px !important;
+    border: 1px solid var(--sv-border-input) !important;
+    background-color: var(--sv-surface) !important;
+    color: var(--sv-text) !important;
+    white-space: nowrap !important;
+    box-shadow: none !important;
+    transition: background-color 0.12s ease, border-color 0.12s ease !important;
+}
+
+.stButton > button:hover,
+.stPopover > div > button:hover,
+.stDownloadButton > button:hover,
+.stFormSubmitButton > button:hover {
+    background-color: var(--sv-surface-nested) !important;
+    border-color: #94A3B8 !important;
+    color: var(--sv-text) !important;
+}
+
+.stButton > button[kind="primary"],
+.stButton > button[data-testid="stBaseButton-primary"],
+.stDownloadButton > button[kind="primary"],
+.stDownloadButton > button[data-testid="stBaseButton-primary"],
+.stFormSubmitButton > button[kind="primary"],
+.stFormSubmitButton > button[data-testid="stBaseButton-primaryFormSubmit"] {
+    background-color: var(--sv-accent) !important;
+    border-color: var(--sv-accent) !important;
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+}
+
+.stButton > button[kind="primary"]:hover,
+.stButton > button[data-testid="stBaseButton-primary"]:hover,
+.stDownloadButton > button[kind="primary"]:hover,
+.stDownloadButton > button[data-testid="stBaseButton-primary"]:hover,
+.stFormSubmitButton > button[kind="primary"]:hover,
+.stFormSubmitButton > button[data-testid="stBaseButton-primaryFormSubmit"]:hover {
+    background-color: var(--sv-accent-hover) !important;
+    border-color: var(--sv-accent-hover) !important;
+    color: #FFFFFF !important;
+}
+
+/* Page Header */
+.sv-header-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.05rem 0 0.85rem 0;
+    margin-bottom: 1.35rem;
+    border-bottom: 1px solid var(--sv-border);
+}
+
+.sv-page-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--sv-text);
+    letter-spacing: -0.02em;
+    margin: 0;
+    line-height: 1.25;
+}
+
+.sv-header-stamp {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--sv-text-secondary);
+    background: var(--sv-surface);
+    border: 1px solid var(--sv-border);
+    padding: 5px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+/* Section Headers */
+.sv-section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--sv-text);
+    letter-spacing: -0.01em;
+    margin: 1.75rem 0 0.9rem 0;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid var(--sv-border);
+}
+
+/* Flat Precision KPI Summary Strip */
+.sv-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 1.5rem;
+}
+
+.sv-kpi-grid.cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+    .sv-kpi-grid.cols-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.sv-kpi-card {
+    background-color: var(--sv-surface);
+    border: 1px solid var(--sv-border);
+    border-radius: 8px;
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 112px;
+}
+
+.sv-kpi-card.tone-critical {
+    border-top: 2px solid var(--sv-critical);
+}
+
+.sv-kpi-card.tone-warning {
+    border-top: 2px solid var(--sv-warning);
+}
+
+.sv-kpi-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--sv-text-secondary);
+    line-height: 1.35;
+    margin-bottom: 8px;
+}
+
+.sv-kpi-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.025em;
+    color: var(--sv-text);
+    line-height: 1.15;
+}
+
+.sv-kpi-value.accent { color: var(--sv-accent); }
+.sv-kpi-value.warning { color: var(--sv-warning); }
+.sv-kpi-value.critical { color: var(--sv-critical); }
+
+.sv-kpi-meta {
+    font-size: 12px;
+    color: var(--sv-text-muted);
+    margin-top: 6px;
+    line-height: 1.35;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Panels, Alerts & Badges */
+.sv-panel {
+    background-color: var(--sv-surface);
+    border: 1px solid var(--sv-border);
+    border-radius: 8px;
+    padding: 1.15rem 1.3rem;
+    margin-bottom: 1.1rem;
+}
+
+.sv-alert-row {
+    background-color: var(--sv-surface);
+    border: 1px solid var(--sv-border);
+    border-left: 3px solid var(--sv-accent);
+    border-radius: 6px;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 0.65rem;
+}
+
+.sv-alert-row.warning { border-left-color: #D97706; }
+.sv-alert-row.critical { border-left-color: #BE123C; }
+
+.sv-alert-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--sv-text);
+    line-height: 1.35;
+}
+
+.sv-alert-detail {
+    font-size: 12px;
+    color: var(--sv-text-secondary);
+    margin-top: 2px;
+    line-height: 1.4;
+}
+
+.sv-badge {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.01em;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.sv-badge.critical { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+.sv-badge.warning { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+.sv-badge.normal { background: #F0FDFA; color: #0F766E; border: 1px solid #CCFBF1; }
+
+.sv-bg-pill {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: #FFF1F2;
+    color: #9F1239;
+    border: 1px solid #FECDD3;
+    margin-right: 6px;
+}
+
+/* Blood Group Live Stock Strip (All 8 ABO/Rh Groups) */
+.sv-bg-grid {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+    .sv-bg-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.sv-bg-tile {
+    background-color: var(--sv-surface);
+    border: 1px solid var(--sv-border);
+    border-radius: 8px;
+    padding: 0.9rem 1.0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sv-bg-tile-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sv-bg-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.sv-bg-status-dot.safe { background-color: #0F766E; }
+.sv-bg-status-dot.warn { background-color: #D97706; }
+.sv-bg-status-dot.crit { background-color: #BE123C; }
+
+.sv-bg-count {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--sv-text);
+    line-height: 1.1;
+}
+
+.sv-bg-count span {
+    font-size: 11.5px;
+    font-weight: 400;
+    color: var(--sv-text-muted);
+    margin-left: 3px;
+}
+
+.sv-empty-state {
+    background-color: var(--sv-surface);
+    border: 1px solid var(--sv-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--sv-text-secondary);
+    font-size: 13px;
+}
+
+/* Form Inputs, Selects & Dataframes */
+.stSelectbox label, .stMultiSelect label, .stTextInput label, .stDateInput label, .stNumberInput label, .stTextArea label {
+    font-size: 12.5px !important;
+    font-weight: 500 !important;
+    color: #334155 !important;
+}
+
+.stTextInput input, .stNumberInput input, .stDateInput input {
+    min-height: 38px !important;
+    border-radius: 6px !important;
+    border: 1px solid var(--sv-border-input) !important;
+    background-color: #FFFFFF !important;
+    color: var(--sv-text) !important;
+    font-variant-numeric: tabular-nums !important;
+}
+
+.stTextInput input:focus, .stNumberInput input:focus, .stDateInput input:focus, .stTextArea textarea:focus {
+    border-color: var(--sv-accent) !important;
+    box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.14) !important;
+}
+
+div[data-baseweb="select"] > div {
+    min-height: 38px !important;
+    border-radius: 6px !important;
+    border-color: var(--sv-border-input) !important;
+    background-color: #FFFFFF !important;
+}
+
+div[data-testid="stDataFrame"] {
+    border: 1px solid var(--sv-border) !important;
+    border-radius: 8px !important;
+    background-color: var(--sv-surface) !important;
+    box-shadow: none !important;
+    overflow: hidden;
+    font-variant-numeric: tabular-nums !important;
+}
+
+div[data-testid="stPlotlyChart"] {
+    background-color: var(--sv-surface);
+    border: 1px solid var(--sv-border);
+    border-radius: 8px;
+    padding: 12px 14px 8px 14px;
+    margin-bottom: 1.15rem;
+}
+
+/* Clean Underline Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 16px;
+    border-bottom: 1px solid var(--sv-border);
+    margin-bottom: 1.25rem;
+}
+
+.stTabs [data-baseweb="tab"] {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: var(--sv-text-secondary) !important;
+    padding: 8px 4px !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+
+.stTabs [aria-selected="true"] {
+    color: var(--sv-text) !important;
+    font-weight: 600 !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid var(--sv-accent) !important;
+}
+
+/* Full-Viewport Edge-to-Edge Split Login */
+.sv-login-left {
+    background-color: #0D2F33;
+    color: #FFFFFF;
+    min-height: 100vh;
+    width: 100%;
+    padding: 3.25rem 3.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.sv-login-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sv-login-hero-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.sv-login-mid {
+    max-width: 460px;
+}
+
+.sv-login-headline {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin: 0 0 1rem 0;
+}
+
+.sv-login-rule {
+    width: 40px;
+    height: 2px;
+    background-color: #2DD4BF;
+    margin-bottom: 1rem;
+}
+
+.sv-login-subheadline {
+    font-size: 14.5px;
+    color: #CBD5E1;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 400;
+}
+
+.sv-login-meta {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 1.25rem;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.sv-login-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sv-login-meta-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: #F8FAFC;
+}
+
+.sv-login-meta-lbl {
+    font-size: 11.5px;
+    color: #94A3B8;
+}
+
+.sv-auth-card-header {
+    margin-bottom: 1.15rem;
+}
+
+.sv-auth-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #0F172A;
+    margin: 0 0 4px 0;
+}
+
+.sv-auth-subtitle {
+    font-size: 13px;
+    color: #64748B;
+    margin: 0;
+    line-height: 1.45;
+}
+
+.sv-auth-note {
+    margin-top: 1.75rem;
+    font-size: 11.5px;
+    color: #94A3B8;
+}

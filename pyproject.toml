@@ -1,0 +1,10 @@
+[project]
+name = "sangvail"
+version = "1.0.0"
+description = "SANGVAIL — Blood Bank Inventory, Operations & Demand Intelligence Platform"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-v"
