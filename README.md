@@ -247,12 +247,8 @@ Run the automated test suite:
 
 ---
 
-## 15. Learning Outcomes & Technical Keywords
 
-**Skills Demonstrated:** Healthcare Inventory Data Modeling · Unit-Level Traceability · Atomic SQLAlchemy Transactions · FEFO Allocation Algorithms · ETL Validation & Auditability · Leak-Free Time-Series Forecasting · Explainable Rules Engines · Automated Data Quality Auditing · ReportLab PDF Generation · Restraint-First Enterprise UI Design.
 
----
-
-## 16. License
+## 15. License
 
 Released under the [MIT License](LICENSE).
