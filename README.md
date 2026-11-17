@@ -1,6 +1,5 @@
 # SANGVAIL — Blood Bank Inventory, Operations & Demand Intelligence Platform
 
-> **Better inventory visibility. Smarter resource planning.**  
 > *Day 24 — 90 Days – 90 Projects Challenge (Healthcare Technology · Data Engineering · Predictive Analytics)*
 
 SANGVAIL is a centralized blood bank operations and resource-intelligence workstation built with Python, Streamlit, SQLAlchemy 2.0, PostgreSQL (with zero-configuration SQLite fallback), Scikit-learn, Plotly, and ReportLab. It tracks individual blood units across their complete operational lifecycle—from synthetic donation intake and controlled screening release to First Expiry, First Out (FEFO) hospital allocation, expiry governance, chronological demand forecasting, and automated 14-check data quality auditing.
